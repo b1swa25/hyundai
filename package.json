@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "npm install --legacy-peer-deps && npx @cloudflare/next-on-pages",
+    "build:cf": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "eslint",
     "db:deploy": "wrangler d1 migrations apply bhutan-hyundai-db --remote"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.1",
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.8",
@@ -28,10 +29,9 @@
     "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
     "@cloudflare/workers-types": "^4.20260217.0",
-    "vercel": "latest",
-    "wrangler": "latest",
+    "vercel": "47.0.4",
+    "wrangler": "3.109.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.33",
     "@types/react": "^19.2.14",
