@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cf": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "eslint",
     "db:deploy": "wrangler d1 migrations apply bhutan-hyundai-db --remote"
@@ -27,6 +28,7 @@
     "tailwind-merge": "^3.4.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@cloudflare/workers-types": "^4.20260217.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.33",
