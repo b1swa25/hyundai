@@ -116,7 +116,7 @@ export async function POST(
         return NextResponse.json({ error: 'Resource not found' }, { status: 404 });
     }
 
-    const body = await req.json();
+    const body = await req.json() as any;
 
     // Add ID if it's text-based and missing
     if (table.id?.name === 'id' && !body.id) {
@@ -148,7 +148,7 @@ export async function PUT(
         return NextResponse.json({ error: 'Bad request' }, { status: 400 });
     }
 
-    const body = await req.json();
+    const body = await req.json() as any;
     if (table.updatedAt) body.updatedAt = new Date();
 
     // Remove relation objects before update

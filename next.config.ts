@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ['drizzle-orm', 'drizzle-kit'],
   eslint: {
     ignoreDuringBuilds: true,
   },

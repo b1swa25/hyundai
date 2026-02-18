@@ -7,7 +7,7 @@ import * as schema from '@/db/schema';
 
 export async function POST(req: Request) {
     try {
-        const { email, password } = await req.json();
+        const { email, password } = await req.json() as any;
         const db = getDb();
 
         // Check against mock/real DB - support both email and username

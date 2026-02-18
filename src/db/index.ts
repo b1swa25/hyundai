@@ -1,5 +1,6 @@
 import { drizzle } from 'drizzle-orm/d1';
 import * as schema from './schema';
+import { getRequestContext } from '@cloudflare/next-on-pages';
 // In-memory store for development mock data
 const mockStore: any = {
     users: [
@@ -124,7 +125,21 @@ const getTableName = (table: any) => {
 };
 
 export const getDb = (d1?: unknown) => {
-    const db = d1 || (process.env.DB as any);
+    let db = d1;
+
+    if (!db) {
+        try {
+            // Try to get from Cloudflare Pages context first
+            const context = getRequestContext();
+            db = (context?.env as any)?.DB;
+        } catch (e) {
+            // Not in a request context, fall back to process.env
+        }
+    }
+
+    if (!db) {
+        db = (process.env.DB as any);
+    }
 
     if (!db) {
         console.warn('D1 Database binding "DB" not found. Using development mock data.');
@@ -358,5 +373,5 @@ export const getDb = (d1?: unknown) => {
         } as any;
     }
 
-    return drizzle(db, { schema });
+    return drizzle(db as any, { schema });
 };
