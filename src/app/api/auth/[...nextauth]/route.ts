@@ -1,7 +1,15 @@
 export const runtime = "edge";
 
-import NextAuth from "next-auth";
-import { authOptions } from "@/auth";
+export async function GET(req: any) {
+    if (process.env.NEXT_PHASE === 'phase-production-build') return new Response("OK");
+    const { default: NextAuth } = await import("next-auth");
+    const { authOptions } = await import("@/auth");
+    return NextAuth(authOptions)(req);
+}
 
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+export async function POST(req: any) {
+    if (process.env.NEXT_PHASE === 'phase-production-build') return new Response("OK");
+    const { default: NextAuth } = await import("next-auth");
+    const { authOptions } = await import("@/auth");
+    return NextAuth(authOptions)(req);
+}

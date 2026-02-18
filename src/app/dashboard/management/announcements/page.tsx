@@ -2,16 +2,16 @@ export const runtime = "edge";
 
 import { ShieldCheck, ChevronLeft, Bell, Save, History, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
 import { getDb } from '@/db';
 import { redirect } from 'next/navigation';
 import { upsertAnnouncement } from '@/lib/actions';
 import { announcements } from '@/db/schema';
 import { desc, eq } from 'drizzle-orm';
+export const dynamic = 'force-dynamic';
 
 export default async function AnnouncementManagerPage() {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     if (!session || session.user.role !== 'ADMIN') redirect('/dashboard');
 
     const db = getDb();

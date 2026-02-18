@@ -1,16 +1,15 @@
 export const runtime = "edge";
 
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
 import { getDb } from '@/db';
 import { categories as categoriesTable } from '@/db/schema';
 import InventoryClient from '@/components/InventoryClient';
 
 export const dynamic = 'force-dynamic';
 
-export default async function Inventory() {
+export default async function InventoryPage() {
     const db = getDb();
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const isAdmin = session?.user?.role === 'ADMIN';
 
     const [allParts, categoriesData] = await Promise.all([

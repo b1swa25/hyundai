@@ -11,8 +11,8 @@ import { redirect } from 'next/navigation';
 // import { authOptions } from '@/auth';
 
 // Temporary mock for session until Edge compatibility is resolved
-const getServerSession = async (...args: any[]) => null;
-const authOptions = {};
+const getServerSession = async (...args: any[]) => null as any;
+const authOptions: any = {};
 
 // Auth Actions
 export async function registerUser(formData: FormData) {
@@ -166,7 +166,7 @@ export async function updateUserProfile(formData: FormData) {
     await db.update(users)
         .set({
             phone,
-            ...(profileImagePath && { profileImage: profileImagePath })
+            ...(profileImagePath ? { profileImage: profileImagePath } : {})
         })
         .where(eq(users.id, session.user.id));
 

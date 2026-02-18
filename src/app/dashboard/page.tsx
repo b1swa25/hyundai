@@ -2,8 +2,7 @@ export const runtime = "edge";
 
 import { Trash2, ExternalLink, ShieldCheck, Clock, CheckCircle2, XCircle, Wrench, Plus, Users as PeopleIcon } from 'lucide-react';
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
 import { getDb } from '@/db';
 import { updateAppointmentStatus } from '@/lib/actions';
 import { redirect } from 'next/navigation';
@@ -12,7 +11,7 @@ import ProfileHeader from '@/components/ProfileHeader';
 export const dynamic = 'force-dynamic';
 
 export default async function Dashboard() {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     if (!session) redirect('/login');
 
     const db = getDb();

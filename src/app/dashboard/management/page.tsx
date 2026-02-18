@@ -2,8 +2,7 @@ export const runtime = "edge";
 
 import { ShieldCheck, ChevronLeft, Users as PeopleIcon, Wrench, LayoutGrid, Bell, Package, Save, CheckCircle2, Sparkles, UserPlus } from 'lucide-react';
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
 import { getDb } from '@/db';
 import { redirect } from 'next/navigation';
 import { sql, eq, desc } from 'drizzle-orm';
@@ -16,7 +15,7 @@ import AddPartButton from '@/components/AddPartButton';
 export const dynamic = 'force-dynamic';
 
 export default async function ManagementPage() {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     if (!session || session.user.role !== 'ADMIN') redirect('/dashboard');
 
     const db = getDb();

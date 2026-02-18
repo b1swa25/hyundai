@@ -4,11 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/db';
 import { users, parts, categories, appointments, announcements } from '@/db/schema';
 import { sql } from 'drizzle-orm';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
 
 export async function GET(req: NextRequest) {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     if (!session || session.user.role !== 'ADMIN') {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }

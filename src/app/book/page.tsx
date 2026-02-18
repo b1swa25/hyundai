@@ -2,13 +2,14 @@ export const runtime = "edge";
 
 import { getDb } from '@/db';
 import { bookAppointment } from '@/lib/actions';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+import { getServerSession } from '@/lib/auth-safe';
+
+export const dynamic = 'force-dynamic';
 
 export default async function BookService() {
     const db = getDb();
     const serviceTypes = await db.query.serviceTypes.findMany();
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
 
     return (
         <div className="max-w-2xl mx-auto space-y-8">
