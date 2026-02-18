@@ -30,6 +30,8 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",
     "@cloudflare/workers-types": "^4.20260217.0",
+    "vercel": "latest",
+    "wrangler": "latest",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.33",
     "@types/react": "^19.2.14",
