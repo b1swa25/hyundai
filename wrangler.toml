@@ -1,6 +1,7 @@
 name = "next-bhutan"
 compatibility_date = "2024-04-03"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
 
 [[d1_databases]]
 binding = "DB"
@@ -8,6 +9,3 @@ database_name = "bhutan-hyundai-db"
 # Replace the database_id below with your actual D1 database ID from the Cloudflare dashboard
 database_id = "f0368be9-7dd1-41fe-b6e7-997ade54885f" 
 migrations_dir = "drizzle"
-
-# Added for Cloudflare Pages compatibility
-pages_build_output_dir = ".vercel/output/static"
