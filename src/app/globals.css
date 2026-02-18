@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-hyundai-blue: #002c5f;
+  --color-hyundai-accent: #0072bc;
+  --color-hyundai-silver: #a4a4a4;
+  --color-bg-dark: #050b16;
+  --color-card-bg: rgba(255, 255, 255, 0.05);
+  --color-text-light: #f8f9fa;
+  --color-accent-glow: rgba(0, 114, 188, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(135deg, rgba(5, 11, 22, 0.95), rgba(0, 44, 95, 0.85)), url('/images/hyundai_hero.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--color-text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-hyundai-blue), var(--color-hyundai-accent), var(--color-hyundai-blue));
+    z-index: 9999;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-card {
+    background: var(--color-card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-hyundai-accent);
+    box-shadow: 0 12px 40px 0 var(--color-accent-glow);
+  }
+
+  .btn-primary {
+    background: var(--color-hyundai-blue);
+    border: 1px solid var(--color-hyundai-accent);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 44, 95, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-hyundai-accent);
+    transform: translateY(-2px);
+    border-color: white;
+    box-shadow: 0 6px 20px var(--color-accent-glow);
+  }
+
+  .accent-text {
+    color: var(--color-hyundai-accent);
+  }
+}
+
+/* Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 1.5s linear infinite;
 }

@@ -1,0 +1,108 @@
+[2026-02-17T10:39:09.101Z] Mock select from parts
+[2026-02-17T10:39:09.102Z] Mock select from resolved with 1 items
+[2026-02-17T10:40:54.317Z] Mock select from parts
+[2026-02-17T10:40:54.317Z] Mock select from resolved with 1 items
+[2026-02-17T10:40:54.318Z] Mock parts.findMany called
+[2026-02-17T10:44:41.161Z] Mock select from parts
+[2026-02-17T10:44:41.161Z] Mock select from resolved with 1 items
+[2026-02-17T10:44:41.161Z] [API] API GET List parts: findMany start
+[2026-02-17T10:44:41.161Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:44:41.161Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:44:41.161Z] [API] API GET List parts: found 1 items
+[2026-02-17T10:45:06.886Z] Mock select from categories
+[2026-02-17T10:45:06.886Z] Mock select from resolved with 1 items
+[2026-02-17T10:45:06.886Z] [API] API GET List categories: findMany start
+[2026-02-17T10:45:06.886Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:45:06.886Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:45:06.886Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:48:07.526Z] Mock parts.findMany called with options keys: with, orderBy
+[2026-02-17T10:48:07.526Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:49:05.120Z] Mock parts.findMany called with options keys: with, orderBy
+[2026-02-17T10:49:05.120Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:49:10.555Z] Mock parts.findMany called with options keys: with, orderBy
+[2026-02-17T10:49:10.555Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:50:56.096Z] Mock parts.findMany called with options keys: with, orderBy
+[2026-02-17T10:50:56.096Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:51:15.571Z] Mock select from parts
+[2026-02-17T10:51:15.571Z] Mock select from resolved with 1 items
+[2026-02-17T10:51:15.572Z] [API] API GET List parts: findMany start
+[2026-02-17T10:51:15.574Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:51:15.574Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:51:15.574Z] [API] API GET List parts: found 1 items
+[2026-02-17T10:51:47.701Z] Mock announcements.findFirst called
+[2026-02-17T10:51:47.701Z] Criteria: (announcements, { eq })=>eq(announcements.active, true)
+[2026-02-17T10:51:47.701Z] Mock announcements.findFirst falling back to first item
+[2026-02-17T10:51:47.716Z] Mock parts.findMany called with options keys: limit, orderBy
+[2026-02-17T10:51:47.716Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:55:08.707Z] Mock announcements.findFirst called
+[2026-02-17T10:55:08.707Z] Criteria: (announcements, { eq })=>eq(announcements.active, true)
+[2026-02-17T10:55:08.707Z] Mock announcements.findFirst falling back to first item
+[2026-02-17T10:55:08.730Z] Mock parts.findMany called with options keys: limit, orderBy
+[2026-02-17T10:55:08.731Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:55:29.285Z] Mock select from parts
+[2026-02-17T10:55:29.286Z] Mock select from resolved with 1 items
+[2026-02-17T10:55:29.288Z] [API] API GET List parts: findMany start
+[2026-02-17T10:55:29.289Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:55:29.290Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:55:29.290Z] [API] API GET List parts: found 1 items
+[2026-02-17T10:55:30.325Z] Mock select from parts
+[2026-02-17T10:55:30.325Z] Mock select from resolved with 1 items
+[2026-02-17T10:55:30.325Z] [API] API GET List parts: findMany start
+[2026-02-17T10:55:30.325Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:55:30.325Z] Mock parts.findMany returning 1 items from store
+[2026-02-17T10:55:30.325Z] [API] API GET List parts: found 1 items
+[2026-02-17T10:55:32.028Z] Mock select from users
+[2026-02-17T10:55:32.028Z] Mock select from resolved with 1 items
+[2026-02-17T10:55:32.028Z] [API] API GET List users: findMany start
+[2026-02-17T10:55:32.028Z] Mock users.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:55:32.028Z] Mock users.findMany returning 1 items from store
+[2026-02-17T10:55:32.028Z] [API] API GET List users: found 1 items
+[2026-02-17T10:55:32.048Z] Mock select from categories
+[2026-02-17T10:55:32.049Z] Mock select from resolved with 1 items
+[2026-02-17T10:55:32.050Z] [API] API GET List categories: findMany start
+[2026-02-17T10:55:32.050Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:55:32.050Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:55:32.050Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:56:07.875Z] Mock select from categories
+[2026-02-17T10:56:07.875Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:07.876Z] [API] API GET List categories: findMany start
+[2026-02-17T10:56:07.876Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:07.876Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:56:07.876Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:56:09.600Z] Mock insert into parts called
+[2026-02-17T10:56:09.600Z] Mock insert success: f22d4c3a-c01b-4b0e-ad8a-12dabf89187a
+[2026-02-17T10:56:10.475Z] Mock select from categories
+[2026-02-17T10:56:10.475Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:10.475Z] [API] API GET List categories: findMany start
+[2026-02-17T10:56:10.475Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:10.475Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:56:10.475Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:56:10.521Z] [API] API GET Single item start: resource=parts, id=f22d4c3a-c01b-4b0e-ad8a-12dabf89187a
+[2026-02-17T10:56:10.521Z] Mock parts.findFirst called
+[2026-02-17T10:56:10.522Z] Criteria: [object Object]
+[2026-02-17T10:56:10.522Z] Mock parts.findFirst falling back to first item
+[2026-02-17T10:56:10.522Z] [API] API GET Single item found: true
+[2026-02-17T10:56:10.682Z] Mock select from categories
+[2026-02-17T10:56:10.682Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:10.682Z] [API] API GET List categories: findMany start
+[2026-02-17T10:56:10.682Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:10.682Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:56:10.682Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:56:17.611Z] Mock select from parts
+[2026-02-17T10:56:17.611Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:17.612Z] [API] API GET List parts: findMany start
+[2026-02-17T10:56:17.613Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:17.613Z] Mock parts.findMany returning 2 items from store
+[2026-02-17T10:56:17.613Z] [API] API GET List parts: found 2 items
+[2026-02-17T10:56:18.092Z] Mock select from categories
+[2026-02-17T10:56:18.092Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:18.093Z] [API] API GET List categories: findMany start
+[2026-02-17T10:56:18.093Z] Mock categories.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:18.093Z] Mock categories.findMany returning 2 items from store
+[2026-02-17T10:56:18.093Z] [API] API GET List categories: found 2 items
+[2026-02-17T10:56:29.203Z] Mock select from parts
+[2026-02-17T10:56:29.203Z] Mock select from resolved with 1 items
+[2026-02-17T10:56:29.203Z] [API] API GET List parts: findMany start
+[2026-02-17T10:56:29.203Z] Mock parts.findMany called with options keys: limit, offset, orderBy, with
+[2026-02-17T10:56:29.204Z] Mock parts.findMany returning 2 items from store
+[2026-02-17T10:56:29.204Z] [API] API GET List parts: found 2 items
