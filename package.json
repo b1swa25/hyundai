@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "npx @cloudflare/next-on-pages",
+    "build:cf": "npm install --legacy-peer-deps && npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "eslint",
     "db:deploy": "wrangler d1 migrations apply bhutan-hyundai-db --remote"
