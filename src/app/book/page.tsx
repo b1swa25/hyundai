@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { getDb } from '@/db';
 import { bookAppointment } from '@/lib/actions';
 import { getServerSession } from 'next-auth';

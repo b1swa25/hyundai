@@ -5,10 +5,14 @@ import { users, appointments, parts, announcements, successStories, employees } 
 import { eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { writeFile } from 'fs/promises';
-import path from 'path';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/auth';
+// import { writeFile } from 'fs/promises';
+// import path from 'path';
+// import { getServerSession } from 'next-auth';
+// import { authOptions } from '@/auth';
+
+// Temporary mock for session until Edge compatibility is resolved
+const getServerSession = async (...args: any[]) => null;
+const authOptions = {};
 
 // Auth Actions
 export async function registerUser(formData: FormData) {
@@ -21,7 +25,7 @@ export async function registerUser(formData: FormData) {
 
     // In a real app, hash the password!
     await db.insert(users).values({
-        id: crypto.randomUUID(),
+        id: globalThis.crypto.randomUUID(),
         username,
         email,
         password, // TODO: Hash this
@@ -148,11 +152,15 @@ export async function updateUserProfile(formData: FormData) {
     let profileImagePath: string | undefined = undefined;
 
     if (profileImage && profileImage.size > 0) {
+        // Filesystem writing is not supported on Cloudflare Edge.
+        // TODO: Implement Cloudflare R2 or similar.
+        /*
         const buffer = Buffer.from(await profileImage.arrayBuffer());
         const filename = `${session.user.id}-${Date.now()}-${profileImage.name.replace(/\s+/g, '_')}`;
         const filePath = path.join(process.cwd(), 'public/images/profiles', filename);
         await writeFile(filePath, buffer);
         profileImagePath = `/images/profiles/${filename}`;
+        */
     }
 
     await db.update(users)
@@ -181,11 +189,14 @@ export async function addPart(formData: FormData) {
 
     if (image && image.size > 0) {
         try {
+            // Filesystem writing is not supported on Cloudflare Edge.
+            /*
             const buffer = Buffer.from(await image.arrayBuffer());
             const filename = `part-${Date.now()}-${image.name.replace(/\s+/g, '_')}`;
             const filePath = path.join(process.cwd(), 'public/images/parts', filename);
             await writeFile(filePath, buffer);
             imagePath = `/images/parts/${filename}`;
+            */
         } catch (e) {
             console.error("Image upload failed:", e);
         }
@@ -219,11 +230,14 @@ export async function createSuccessStory(formData: FormData) {
 
     if (image && image.size > 0) {
         try {
+            // Filesystem writing is not supported on Cloudflare Edge.
+            /*
             const buffer = Buffer.from(await image.arrayBuffer());
             const filename = `story-${Date.now()}-${image.name.replace(/\s+/g, '_')}`;
             const filePath = path.join(process.cwd(), 'public/images/stories', filename);
             await writeFile(filePath, buffer);
             imagePath = `/images/stories/${filename}`;
+            */
         } catch (e) {
             console.error("Story image upload failed:", e);
         }
@@ -265,11 +279,14 @@ export async function createEmployee(formData: FormData) {
 
     if (image && image.size > 0) {
         try {
+            // Filesystem writing is not supported on Cloudflare Edge.
+            /*
             const buffer = Buffer.from(await image.arrayBuffer());
             const filename = `employee-${Date.now()}-${image.name.replace(/\s+/g, '_')}`;
             const filePath = path.join(process.cwd(), 'public/images/team', filename);
             await writeFile(filePath, buffer);
             imagePath = `/images/team/${filename}`;
+            */
         } catch (e) {
             console.error("Employee image upload failed:", e);
         }

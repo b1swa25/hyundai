@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { ShieldCheck, ChevronLeft, Users as PeopleIcon, Wrench, LayoutGrid, Bell, Package, Save, CheckCircle2, Sparkles, UserPlus } from 'lucide-react';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';

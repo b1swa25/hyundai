@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getDb } from '@/db';
+export const runtime = 'edge';
 import { Sparkles, Users } from 'lucide-react';
 import SuccessStoryCard from '@/components/SuccessStoryCard';
 import EmployeeCard from '@/components/EmployeeCard';

@@ -1,13 +1,16 @@
+export const runtime = 'edge';
+
 import { getDb } from '@/db';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ShoppingCart, ShieldCheck } from 'lucide-react';
 
-export default async function PartDetail({ params }: { params: { id: string } }) {
+export default async function PartDetail({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const db = getDb();
     const part = await db.query.parts.findFirst({
-        where: (parts: any, { eq }: any) => eq(parts.id, parseInt(params.id)),
+        where: (parts: any, { eq }: any) => eq(parts.id, parseInt(id)),
         with: { category: true },
     });
 

@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import AdminPortal from '@/components/AdminPortal';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/auth';

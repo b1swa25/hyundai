@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextRequest, NextResponse } from 'next/server';
 import { getDb } from '@/db';
 import { users, categories, parts, serviceTypes, appointments, announcements } from '@/db/schema';

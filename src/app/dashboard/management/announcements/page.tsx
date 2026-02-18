@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { ShieldCheck, ChevronLeft, Bell, Save, History, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';

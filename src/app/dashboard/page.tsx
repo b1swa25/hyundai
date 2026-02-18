@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { Trash2, ExternalLink, ShieldCheck, Clock, CheckCircle2, XCircle, Wrench, Plus, Users as PeopleIcon } from 'lucide-react';
 import Link from 'next/link';
 import { getServerSession } from 'next-auth';
